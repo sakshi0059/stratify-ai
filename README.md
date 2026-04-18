@@ -248,7 +248,6 @@ VITE_API_URL=https://stratify-ai-k5sb.onrender.com
 |------------|---------|
 | 🔐 No Authentication | System is open-access, no user management |
 | 📦 Limited Dataset | Model trained on a constrained dataset |
-| 🎨 Basic UI | Functional but not fully polished |
 | ⚙️ Not Production-Optimized | Model not tuned for high-volume scaling |
 
 ---
