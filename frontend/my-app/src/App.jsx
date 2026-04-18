@@ -162,9 +162,7 @@ const [whatIfLoading, setWhatIfLoading] = useState(false);
   setLoading(true);
 
   try {
-    const res = await fetch(
-      `/predict?tenure=${encodeURIComponent(tenure)}&monthly_charges=${encodeURIComponent(monthly)}&total_charges=${encodeURIComponent(total)}`
-    );
+    const res = await fetch(`${import.meta.env.VITE_API_URL}/predict?tenure=${tenure}&monthly_charges=${monthly}&total_charges=${total}`)
 
     if (!res.ok) {
   const err = await res.json();
