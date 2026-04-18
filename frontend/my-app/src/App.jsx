@@ -191,24 +191,25 @@ async function runWhatIf() {
 
   setWhatIfLoading(true);
 
-  // ✅ let UI update BEFORE heavy work
-  await Promise.resolve();
-
-  const discountedMonthly = Math.round(monthly * 0.8);
-
   try {
+    const discountedMonthly = Math.round(Number(monthly) * 0.8);
+
     const res = await fetch(
-      `/predict?tenure=${tenure}&monthly_charges=${discountedMonthly}&total_charges=${total}`
+      `${import.meta.env.VITE_API_URL}/predict?tenure=${Number(tenure)}&monthly_charges=${discountedMonthly}&total_charges=${Number(total)}`
     );
+
+    if (!res.ok) throw new Error("What-if failed");
 
     const data = await res.json();
     setWhatIfResult(data);
+
     setTimeout(() => {
-  whatIfRef.current?.scrollIntoView({
-    behavior: "smooth",
-    block: "start"
-  });
-}, 100);
+      whatIfRef.current?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }, 100);
+
   } catch (e) {
     console.log("What-if error", e);
   } finally {
