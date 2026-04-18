@@ -259,7 +259,7 @@ v2.0  ──  📊  Dashboards & data visualization layer
 v2.1  ──  🔐  User authentication & role-based access
 v2.2  ──  🤖  Improved model accuracy with larger datasets
 v2.3  ──  💬  NLP module for customer feedback analysis
-v3.0  ──  ☁️   Production-scale backend with distributed inference
+v3.0  ──  ☁️  Production-scale backend with distributed inference
 ```
 
 ---
